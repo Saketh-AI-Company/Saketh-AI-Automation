@@ -123,12 +123,13 @@ export default function Services({ onNavigate }: ServicesProps) {
                 </div>
 
                 <button
-                  onClick={() => onNavigate('contact')}
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-colors font-semibold"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+  onClick={() => window.open('https://wa.me/918187889752', '_blank')}
+  className="inline-flex items-center space-x-2 px-6 py-3 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-colors font-semibold"
+>
+  <span>Get Started</span>
+  <ArrowRight className="w-5 h-5" />
+</button>
+
               </div>
 
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
@@ -175,11 +176,12 @@ export default function Services({ onNavigate }: ServicesProps) {
             Let's discuss your project and create a custom solution for your business
           </p>
           <button
-            onClick={() => onNavigate('contact')}
+            onClick={() => window.open('https://wa.me/918187889752', '_blank')}
             className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
-          >
-            Book a Free Consultation
-          </button>
+           >
+           Book a Free Consultation
+           </button>
+
         </div>
       </section>
     </div>

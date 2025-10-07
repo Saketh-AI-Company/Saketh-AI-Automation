@@ -9,8 +9,8 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
     { name: 'Training', path: '/training' },
     { name: 'Contact', path: '/contact' },
   ]

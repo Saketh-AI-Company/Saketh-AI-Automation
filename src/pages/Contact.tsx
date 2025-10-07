@@ -556,15 +556,15 @@ export default function Contact({ onNavigate }: ContactProps) {
                         className="mt-1 h-4 w-4 text-[#0EA5E9] focus:ring-[#0EA5E9] border-gray-300 rounded disabled:cursor-not-allowed"
                       />
                       <label htmlFor="agreeToTerms" className="text-sm text-gray-700">
-                        I agree to the{' '}
-                        <a
-                          href="/terms"
+                        I agree to the terms and conditions of the company{' '}
+                        {/*<a
+                          href=""
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[#0EA5E9] hover:underline"
                         >
                           terms and conditions
-                        </a>
+                        </a>*/}
                       </label>
                     </div>
 

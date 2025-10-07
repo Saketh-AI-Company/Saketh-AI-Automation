@@ -98,13 +98,16 @@ export default function Vision() {
                   Ready to scale into the AI-powered future?
                 </p>
 
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-xl"
-                >
-                  Book a Free Call
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+               <a
+  href="https://wa.me/918187889752"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-xl"
+>
+  Book a Free Call
+  <ArrowRight className="w-5 h-5" />
+</a>
+
               </div>
             </div>
           </div>

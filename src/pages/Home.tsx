@@ -303,20 +303,21 @@ export default function Home({ onNavigate }: HomeProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => onNavigate('/contact')}
-              className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
-            >
-              Book a Free Call
-            </button>
-            <a
-              href="https://wa.me/918187889752"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold text-lg border border-white/20 inline-flex items-center justify-center space-x-2"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp Us</span>
-            </a>
+  onClick={() => window.open('https://wa.me/918187889752', '_blank')}
+  className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
+>
+  Book a Free Call
+</button>
+<a
+  href="https://wa.me/918187889752"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold text-lg flex items-center gap-2"
+>
+  <MessageCircle className="w-5 h-5" />
+  WhatsApp Us
+</a>
+
           </div>
         </div>
       </section>

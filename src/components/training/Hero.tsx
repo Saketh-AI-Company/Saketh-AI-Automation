@@ -60,11 +60,14 @@ export default function Hero() {
         {/* Action buttons */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <a
-            href="/Contact"
-            className="inline-block bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
-          >
-            Join Now
-          </a>
+  href="https://wa.me/918187889752"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
+>
+  Join Now
+</a>
+
           <button
             onClick={handleDownloadPDF}
             className="inline-flex items-center justify-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/20 transition"

@@ -121,11 +121,11 @@ export default function About({ onNavigate }: AboutProps) {
               </p>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/20">
                 <div>
-                  <div className="text-3xl font-bold text-[#22C55E]">150+</div>
+                  <div className="text-3xl font-bold text-[#22C55E]">100+</div>
                   <div className="text-sm text-gray-300">Projects Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#22C55E]">80+</div>
+                  <div className="text-3xl font-bold text-[#22C55E]">95+</div>
                   <div className="text-sm text-gray-300">Happy Clients</div>
                 </div>
               </div>
@@ -227,11 +227,12 @@ export default function About({ onNavigate }: AboutProps) {
             Let's discuss how we can help you automate smarter and scale faster
           </p>
           <button
-            onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
-          >
-            Book a Free Call
-          </button>
+  onClick={() => window.open('https://wa.me/918187889752', '_blank')}
+  className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
+>
+  Book a Free Call
+</button>
+
         </div>
       </section>
     </div>
