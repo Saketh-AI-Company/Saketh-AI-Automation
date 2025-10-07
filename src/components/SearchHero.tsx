@@ -141,16 +141,16 @@ function SearchHero() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex flex-col">
-      {/* Header */}
+      {/* Header - UPDATED with more spacing and bigger mobile font */}
       {messages.length === 0 && (
-        <div className="text-center px-4 pt-8 sm:pt-12 md:pt-16 lg:pt-20">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-4 leading-tight">
+        <div className="text-center px-4 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
             Welcome to{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
               Saketh AI Automation!
             </span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
             Ask anything related to our services and your business queries?
           </p>
         </div>
