@@ -3,7 +3,7 @@ import CourseDetails from '../components/training/CourseDetails'
 import BatchFeatures from '../components/training/BatchFeatures'
 import WhatYouGet from '../components/training/WhatYouGet'
 import Curriculum from '../components/training/Curriculum'
-import Vision from '../components/training/vision'
+import Vision from '../components/training/Vision'
 import FAQ from '../components/training/FAQ'
 
 
