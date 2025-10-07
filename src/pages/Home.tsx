@@ -195,7 +195,7 @@ export default function Home({ onNavigate }: HomeProps) {
               onClick={() => onNavigate('case-studies')}
               className="inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-[#0284C7] font-semibold"
             >
-              <span>View All Case Studies</span>
+             {/*<span>View All Case Studies</span>*/}
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -303,7 +303,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => onNavigate('/contact')}
               className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
             >
               Book a Free Call
