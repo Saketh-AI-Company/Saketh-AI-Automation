@@ -1,0 +1,117 @@
+{
+  "pages": {
+    "home": {
+      "title": "Saketh AI Automation - Transform Your Business with AI & Automation",
+      "metaDescription": "Custom websites, mobile apps, and AI agents built to automate operations, capture leads, and scale revenue. Get a free consultation today.",
+      "keywords": "AI automation, business automation, custom websites, mobile app development, AI agents, workflow automation, lead generation",
+      "ogTitle": "Saketh AI Automation - AI-Powered Business Solutions",
+      "ogDescription": "Transform your business with custom AI automation, web development, and mobile apps. 150+ projects delivered, 240% average ROI."
+    },
+    "services": {
+      "title": "Our Services - Website, App & AI Automation Development | Saketh AI",
+      "metaDescription": "Professional website development, mobile app creation, and AI automation services. Fast MVPs, custom architecture, and measurable results.",
+      "keywords": "website development, mobile app development, AI automation services, custom software, n8n automation, chatbot development",
+      "ogTitle": "Development Services - Websites, Apps & AI Automation",
+      "ogDescription": "End-to-end digital solutions: responsive websites, native mobile apps, and intelligent AI automation workflows."
+    },
+    "case-studies": {
+      "title": "Case Studies - Real Results from AI Automation | Saketh AI",
+      "metaDescription": "See how we've helped businesses increase revenue by 300%, reduce manual work by 80%, and generate thousands of qualified leads through automation.",
+      "keywords": "automation case studies, AI success stories, business transformation, ROI examples, automation results",
+      "ogTitle": "Client Success Stories - Proven Automation Results",
+      "ogDescription": "Real case studies showing 300% faster processing, 85% more leads, and millions in cost savings through AI automation."
+    },
+    "pricing": {
+      "title": "Transparent Pricing - Website, App & AI Automation Costs | Saketh AI",
+      "metaDescription": "Fair, transparent pricing for websites, mobile apps, and AI automation. Starter, Growth, and Enterprise plans with custom quotes based on your needs.",
+      "keywords": "automation pricing, website development cost, app development pricing, AI agent pricing, custom software pricing",
+      "ogTitle": "Pricing & Plans - Custom Solutions for Every Budget",
+      "ogDescription": "Flexible pricing for automation projects. From simple MVPs to enterprise solutions, get custom pricing that fits your needs."
+    },
+    "resources": {
+      "title": "Learning Hub - Free AI Automation Tutorials & Guides | Saketh AI",
+      "metaDescription": "Free tutorials, videos, and guides on AI automation, n8n workflows, chatbot development, and business process automation.",
+      "keywords": "automation tutorials, n8n guides, AI agent tutorials, chatbot guides, workflow automation learning, free resources",
+      "ogTitle": "Free Automation Resources - Tutorials, Videos & Guides",
+      "ogDescription": "Learn AI automation with free step-by-step tutorials, video walkthroughs, and comprehensive guides for business owners."
+    },
+    "about": {
+      "title": "About Saketh AI Automation - Our Story & Mission",
+      "metaDescription": "Founded to help businesses leverage AI and automation. 150+ projects delivered, 80+ happy clients, focused on education and real results.",
+      "keywords": "about Saketh AI, automation company, AI development team, business automation experts, custom software company",
+      "ogTitle": "About Us - Mission-Driven AI Automation Experts",
+      "ogDescription": "Meet the team behind Saketh AI Automation. We build transparent, educational automation solutions that deliver 240% average ROI."
+    },
+    "contact": {
+      "title": "Contact Us - Get a Free Consultation | Saketh AI Automation",
+      "metaDescription": "Book a free consultation to discuss your automation needs. Call +91 8187889752 or message us on WhatsApp. 24-hour response guarantee.",
+      "keywords": "contact automation experts, free consultation, AI automation quote, get started with automation",
+      "ogTitle": "Contact Saketh AI - Free Consultation Available",
+      "ogDescription": "Ready to automate? Contact us for a free consultation. Phone, WhatsApp, or email. We respond within 24 hours."
+    }
+  },
+  "structuredData": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Saketh AI Automation",
+      "url": "https://saketh.ai",
+      "logo": "https://saketh.ai/logo.png",
+      "description": "Custom websites, mobile apps, and AI agents built to automate operations and scale revenue",
+      "telephone": "+918187889752",
+      "email": "contact@saketh.ai",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/saketh-ai",
+        "https://twitter.com/saketh_ai",
+        "https://youtube.com/@saketh-ai"
+      ]
+    },
+    "website": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Saketh AI Automation",
+      "url": "https://saketh.ai",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://saketh.ai/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    "services": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Website Development",
+        "provider": {
+          "@type": "Organization",
+          "name": "Saketh AI Automation"
+        },
+        "description": "Custom website development with SEO optimization, mobile responsiveness, and conversion optimization"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Mobile App Development",
+        "provider": {
+          "@type": "Organization",
+          "name": "Saketh AI Automation"
+        },
+        "description": "Native iOS and Android app development with cloud integration and analytics"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Automation",
+        "provider": {
+          "@type": "Organization",
+          "name": "Saketh AI Automation"
+        },
+        "description": "Custom AI agents and workflow automation to scale business operations"
+      }
+    ]
+  }
+}
