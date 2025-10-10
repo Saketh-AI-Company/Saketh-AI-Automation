@@ -175,8 +175,12 @@ function SearchHero() {
                 className={`flex items-start gap-3 sm:gap-4 ${msg.isUser ? 'flex-row-reverse' : 'flex-row'}`}
               >
                 {!msg.isUser && (
-                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                    <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/footer-logo.png" 
+                      alt="Saketh AI" 
+                      className="w-6 h-6 sm:w-8 sm:h-8 object-cover rounded-full"
+                    />
                   </div>
                 )}
 
@@ -205,8 +209,12 @@ function SearchHero() {
 
             {isLoading && (
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                  <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/footer-logo.png" 
+                    alt="Saketh AI" 
+                    className="w-6 h-6 sm:w-8 sm:h-8 object-cover rounded-full"
+                  />
                 </div>
                 <div className="bg-gray-800/80 rounded-2xl px-4 py-3 sm:px-6 sm:py-4 border border-gray-700/50">
                   <div className="flex items-center gap-2 text-gray-300">
