@@ -1,9 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, MessageCircle, Send, MapPin, Loader2 } from 'lucide-react'
-
-interface ContactProps {
-  onNavigate: (page: string) => void
-}
+import { Mail, Phone, MessageCircle, Send, MapPin, Loader2, Sparkles } from 'lucide-react'
 
 interface FormData {
   firstName: string
@@ -21,7 +17,7 @@ interface FormData {
   agreeToTerms: boolean
 }
 
-export default function Contact({ onNavigate }: ContactProps) {
+export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -198,98 +194,122 @@ export default function Contact({ onNavigate }: ContactProps) {
   }
 
   return (
-    <div className="pt-16">
-      <section className="bg-gradient-to-br from-[#071130] via-[#0A1A4A] to-[#071130] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+    <div>
+      {/* Hero Section - Modern */}
+      <section className="relative section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-black text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+        
+        <div className="section-container relative z-10 text-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 animate-fade-in">
+            <Sparkles className="w-4 h-4 text-primary-400" />
+            <span className="text-sm font-medium">Let's Connect</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+            Get In <span className="text-gradient">Touch</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-dark-200 max-w-4xl mx-auto leading-relaxed font-light">
             Ready to transform your business with AI automation? Let's talk about your project
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Contact Form Section - Modern */}
+      <section className="section-padding bg-gradient-to-b from-white to-dark-50">
+        <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-[#071130] mb-6">Contact Information</h2>
-              <p className="text-gray-600 mb-8">
+              <h2 className="text-3xl font-bold text-dark-900 mb-6">Contact Information</h2>
+              <p className="text-dark-600 mb-10 text-lg leading-relaxed">
                 Reach out through any of these channels. We typically respond within 24 hours.
               </p>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0EA5E9]/10 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#0EA5E9]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#071130] mb-1">Phone</h3>
-                    <a
-                      href="tel:+918187889752"
-                      className="text-gray-600 hover:text-[#0EA5E9] transition-colors"
-                    >
-                      +91 8187889752
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0EA5E9]/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#0EA5E9]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#071130] mb-1">Email</h3>
-                    <a
-                      href="mailto:contact@saketh.ai"
-                      className="text-gray-600 hover:text-[#0EA5E9] transition-colors"
-                    >
-                      contact@sakethaiautomation.com
-                    </a>
+                <div className="group p-6 bg-white border-2 border-dark-100 rounded-2xl hover:border-primary-200 transition-all card-hover">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-dark-900 mb-2">Phone</h3>
+                      <a
+                        href="tel:+918187889752"
+                        className="text-dark-600 hover:text-primary-600 transition-colors font-medium"
+                      >
+                        +91 8187889752
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#22C55E]/10 rounded-lg flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-[#22C55E]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#071130] mb-1">WhatsApp</h3>
-                    <a
-                      href="https://wa.me/918187889752"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-[#22C55E] transition-colors"
-                    >
-                      Chat with us instantly
-                    </a>
+                <div className="group p-6 bg-white border-2 border-dark-100 rounded-2xl hover:border-primary-200 transition-all card-hover">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-dark-900 mb-2">Email</h3>
+                      <a
+                        href="mailto:contact@sakethaiautomation.com"
+                        className="text-dark-600 hover:text-primary-600 transition-colors font-medium break-all"
+                      >
+                        contact@sakethaiautomation.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0EA5E9]/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-[#0EA5E9]" />
+                <div className="group p-6 bg-white border-2 border-dark-100 rounded-2xl hover:border-accent-green/50 transition-all card-hover">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-green to-emerald-500 rounded-xl flex items-center justify-center">
+                      <MessageCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-dark-900 mb-2">WhatsApp</h3>
+                      <a
+                        href="https://wa.me/918187889752"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-dark-600 hover:text-accent-green transition-colors font-medium"
+                      >
+                        Chat with us instantly
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-[#071130] mb-1">Location</h3>
-                    <p className="text-gray-600">
-                      Serving clients worldwide
-                    </p>
+                </div>
+
+                <div className="group p-6 bg-white border-2 border-dark-100 rounded-2xl hover:border-primary-200 transition-all card-hover">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-dark-900 mb-2">Location</h3>
+                      <p className="text-dark-600 font-medium">
+                        Serving clients worldwide
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-br from-[#0EA5E9]/10 to-[#22C55E]/10 rounded-xl border border-[#0EA5E9]/20">
-                <h3 className="font-bold text-[#071130] mb-3">Quick Response Guarantee</h3>
-                <p className="text-sm text-gray-700">
-                  We respond to all inquiries within 24 hours on business days. For urgent matters,
-                  call or WhatsApp us directly.
-                </p>
+              <div className="mt-10 relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 via-accent-purple to-accent-cyan rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+                <div className="relative glass rounded-2xl p-6">
+                  <h3 className="font-bold text-dark-900 mb-3 text-lg">Quick Response Guarantee</h3>
+                  <p className="text-dark-700 leading-relaxed">
+                    We respond to all inquiries within 24 hours on business days. For urgent matters,
+                    call or WhatsApp us directly.
+                  </p>
+                </div>
               </div>
             </div>
 
             <div className="lg:col-span-2">
-              <div className="bg-gray-50 rounded-xl p-8">
-                <h2 className="text-2xl font-bold text-[#071130] mb-6">Let's get to know you</h2>
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-purple to-accent-cyan rounded-3xl blur opacity-20"></div>
+                <div className="relative glass rounded-3xl p-10">
+                  <h2 className="text-3xl font-bold text-dark-900 mb-8">Let's get to know you</h2>
 
                 {/* Error Message */}
                 {submitError && (
@@ -299,12 +319,12 @@ export default function Contact({ onNavigate }: ContactProps) {
                 )}
 
                 {submitted ? (
-                  <div className="bg-[#22C55E]/10 border border-[#22C55E] rounded-lg p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-[#22C55E] text-white rounded-full mb-4">
-                      <Send className="w-8 h-8" />
+                  <div className="glass rounded-2xl p-12 text-center animate-scale-in">
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent-green to-emerald-500 text-white rounded-2xl mb-6 shadow-xl">
+                      <Send className="w-10 h-10" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#071130] mb-2">Message Sent!</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-3xl font-bold text-dark-900 mb-4">Message Sent!</h3>
+                    <p className="text-dark-600 text-lg">
                       Thank you for reaching out. We'll get back to you within 24 hours.
                     </p>
                   </div>
@@ -587,28 +607,30 @@ export default function Contact({ onNavigate }: ContactProps) {
                     </button>
                   </form>
                 )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-     
-
-      <section className="py-20 bg-gradient-to-br from-[#071130] via-[#0A1A4A] to-[#071130] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Final Stats Section - Modern */}
+      <section className="relative section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-black text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh-strong opacity-30"></div>
+        
+        <div className="section-container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-[#22C55E] mb-2">&lt; 24hrs</div>
-              <p className="text-gray-300">Average Response Time</p>
+            <div className="group">
+              <div className="text-5xl md:text-6xl font-extrabold text-gradient mb-4 group-hover:scale-110 transition-transform">&lt; 24hrs</div>
+              <p className="text-dark-200 text-lg font-medium">Average Response Time</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-[#22C55E] mb-2">100%</div>
-              <p className="text-gray-300">Free Consultations</p>
+            <div className="group">
+              <div className="text-5xl md:text-6xl font-extrabold text-gradient mb-4 group-hover:scale-110 transition-transform">100%</div>
+              <p className="text-dark-200 text-lg font-medium">Free Consultations</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-[#22C55E] mb-2">No Obligation</div>
-              <p className="text-gray-300">Just Honest Advice</p>
+            <div className="group">
+              <div className="text-5xl md:text-6xl font-extrabold text-gradient mb-4 group-hover:scale-110 transition-transform">No Obligation</div>
+              <p className="text-dark-200 text-lg font-medium">Just Honest Advice</p>
             </div>
           </div>
         </div>

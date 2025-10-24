@@ -14,8 +14,8 @@ export default function WhatYouGet() {
     },
     {
       icon: Video,
-      title: 'Recorded Sessions for Lifetime',
-      description: 'Learn at your own pace with unlimited access to all session recordings'
+      title: 'Recorded Sessions for 1 Year',
+      description: 'Learn at your own pace with 1 year access to all session recordings'
     },
     {
       icon: Code,

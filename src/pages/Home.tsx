@@ -1,20 +1,19 @@
 import MarqueeVideoCarousel from '../components/MarqueeVideoCarousel';
 import TrustedCompaniesCarousel from '../components/TrustedCompaniesCarousel';
 import SearchHero from '../components/SearchHero';
-import { ArrowRight, Check, TrendingUp, Users, Award, Zap, Target, Eye, MessageCircle } from 'lucide-react'
+import { Check, Zap, Target, Eye, MessageCircle, Sparkles, TrendingUp } from 'lucide-react'
 
-interface HomeProps {
-  onNavigate: (page: string) => void
-}
-
-export default function Home({ onNavigate }: HomeProps) {
-  const stats = [
-    { label: 'Projects Delivered', value: '150+' },
-    { label: 'Active Clients', value: '80+' },
-    { label: 'Avg ROI Increase', value: '240%' },
-  ]
-
+export default function Home() {
   const services = [
+    {
+      title: 'AI Agents & Automation',
+      description: 'Intelligent automation that scales your business',
+      features: [
+        'Lead capture & qualification',
+        'Workflow automation',
+        'Custom AI integrations',
+      ],
+    },
     {
       title: 'Websites',
       description: 'Fast, responsive, conversion-optimized websites',
@@ -31,15 +30,6 @@ export default function Home({ onNavigate }: HomeProps) {
         'iOS & Android development',
         'Cloud integration',
         'Push notifications & analytics',
-      ],
-    },
-    {
-      title: 'AI Agents & Automation',
-      description: 'Intelligent automation that scales your business',
-      features: [
-        'Lead capture & qualification',
-        'Workflow automation',
-        'Custom AI integrations',
       ],
     },
   ]
@@ -100,57 +90,92 @@ export default function Home({ onNavigate }: HomeProps) {
   ]
 
   return (
-    <div className="pt-16">
+    <div>
       <SearchHero />
 
-      
-
-      
-
-
-      
-
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">What We Build</h2>
-            <p className="text-xl text-gray-600">End-to-end digital solutions for modern businesses</p>
+      {/* Services Section - Modern Cards */}
+      <section className="section-padding bg-gradient-to-b from-white to-dark-50">
+        <div className="section-container">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-50 border border-primary-100 rounded-full mb-6 animate-fade-in">
+              <Sparkles className="w-4 h-4 text-primary-600" />
+              <span className="text-sm font-medium text-primary-700">Our Services</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-900 mb-6">
+              What We <span className="text-gradient">Build</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
+              End-to-end digital solutions for modern businesses
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold text-[#071130] mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div 
+                key={index} 
+                className="group relative bg-white border-2 border-dark-100 rounded-3xl p-8 card-hover overflow-hidden"
+              >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-mesh opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Sparkles className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-dark-600 mb-8 text-lg leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-4">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-accent-green/10 rounded-lg flex items-center justify-center mt-0.5">
+                          <Check className="w-4 h-4 text-accent-green" />
+                        </div>
+                        <span className="text-dark-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Why Saketh AI</h2>
-            <p className="text-xl text-gray-600">Our approach to delivering exceptional results</p>
+      {/* Values Section - Modern Grid */}
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20"></div>
+        
+        <div className="section-container relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-900 mb-6">
+              Why Choose <span className="text-gradient">Saketh AI</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
+              Our approach to delivering exceptional results
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0EA5E9] text-white rounded-xl mb-4">
+              <div 
+                key={index} 
+                className="group relative bg-white border-2 border-dark-100 rounded-2xl p-8 card-hover text-center"
+              >
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#071130] mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                  {value.title}
+                </h3>
+                <p className="text-dark-600 leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -160,164 +185,202 @@ export default function Home({ onNavigate }: HomeProps) {
 
       <TrustedCompaniesCarousel />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Success Stories</h2>
-            <p className="text-xl text-gray-600">Real results from real businesses</p>
+      {/* Case Studies Section - Modern Cards */}
+      <section className="section-padding bg-gradient-to-b from-dark-50 to-white">
+        <div className="section-container">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-accent-green/10 border border-accent-green/20 rounded-full mb-6 animate-fade-in">
+              <TrendingUp className="w-4 h-4 text-accent-green" />
+              <span className="text-sm font-medium text-accent-green">Success Stories</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-900 mb-6">
+              Real <span className="text-gradient">Results</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
+              Measurable impact from real businesses
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <div key={index} className="bg-gradient-to-br from-[#071130] to-[#0A1A4A] text-white rounded-xl p-8 hover:shadow-2xl transition-shadow">
-                <div className="text-4xl font-bold text-[#22C55E] mb-4">{study.metric}</div>
-                <h3 className="text-xl font-bold mb-4">{study.title}</h3>
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <span className="text-gray-400">Problem:</span>
-                    <p className="text-gray-200">{study.problem}</p>
-                  </div>
-                  <div>
-                    <span className="text-gray-400">Solution:</span>
-                    <p className="text-gray-200">{study.solution}</p>
-                  </div>
-                  <div>
-                    <span className="text-gray-400">Result:</span>
-                    <p className="text-[#22C55E] font-semibold">{study.result}</p>
+            {caseStudies.map((study, index) => {
+              const gradients = [
+                'from-primary-600 via-primary-700 to-primary-800',
+                'from-accent-purple via-purple-700 to-purple-900',
+                'from-dark-700 via-dark-800 to-dark-900'
+              ];
+              const metricGradients = [
+                'from-accent-cyan to-primary-400',
+                'from-accent-pink to-accent-purple',
+                'from-accent-green to-emerald-400'
+              ];
+              
+              return (
+                <div 
+                  key={index} 
+                  className={`group relative bg-gradient-to-br ${gradients[index]} text-white rounded-3xl p-8 card-hover overflow-hidden shadow-2xl`}
+                >
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className={`text-5xl font-extrabold bg-gradient-to-r ${metricGradients[index]} bg-clip-text text-transparent mb-6`}>
+                      {study.metric}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-6">{study.title}</h3>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <span className="text-white/70 text-sm font-semibold uppercase tracking-wide">Problem</span>
+                        <p className="text-white/90 mt-1">{study.problem}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/70 text-sm font-semibold uppercase tracking-wide">Solution</span>
+                        <p className="text-white/90 mt-1">{study.solution}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/70 text-sm font-semibold uppercase tracking-wide">Result</span>
+                        <p className={`bg-gradient-to-r ${metricGradients[index]} bg-clip-text text-transparent font-bold mt-1 text-lg`}>{study.result}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={() => onNavigate('case-studies')}
-              className="inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-[#0284C7] font-semibold"
-            >
-             {/*<span>View All Case Studies</span>*/}
-              <ArrowRight className="w-5 h-5" />
-            </button>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600">From concept to deployment in 5 clear steps</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0EA5E9] text-white rounded-full text-2xl font-bold mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold text-[#071130] mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-     {/*<section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Learning Hub</h2>
-            <p className="text-xl text-gray-600">Free resources to help you automate smarter</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#0EA5E9] font-semibold text-sm mb-2">TUTORIAL</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Building AI Agents with n8n</h3>
-              <p className="text-gray-600 mb-4">Learn how to create custom automation workflows</p>
-              <button className="text-[#0EA5E9] hover:text-[#0284C7] font-semibold">Read More →</button>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#0EA5E9] font-semibold text-sm mb-2">VIDEO</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Lead Qualification Automation</h3>
-              <p className="text-gray-600 mb-4">Watch how we automate lead scoring and routing</p>
-              <button className="text-[#0EA5E9] hover:text-[#0284C7] font-semibold">Watch Now →</button>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#0EA5E9] font-semibold text-sm mb-2">GUIDE</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Choosing the Right Tech Stack</h3>
-              <p className="text-gray-600 mb-4">Make informed decisions for your project</p>
-              <button className="text-[#0EA5E9] hover:text-[#0284C7] font-semibold">Read More →</button>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={() => onNavigate('resources')}
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-[#0EA5E9] text-white rounded-lg hover:bg-[#0284C7] transition-colors font-semibold"
-            >
-              <span>Browse All Resources</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </section>*/}
-
-      
-
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">A Note from the Founder</h2>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border border-gray-200">
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              "I started Saketh AI Automation because I saw too many businesses struggling with manual processes that technology could easily solve. My mission is simple: build tools that work, teach you how they work, and make sure you get real results. Every project we take on is focused on creating measurable value for your business."
+      {/* Process Section - Modern Timeline */}
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20"></div>
+        
+        <div className="section-container relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-900 mb-6">
+              Our <span className="text-gradient">Process</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
+              From concept to deployment in 5 clear steps
             </p>
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-[#0EA5E9] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                SA
-              </div>
-              <div>
-                <div className="font-bold text-[#071130]">Saketh</div>
-                <div className="text-gray-600">Founder & Lead Engineer</div>
+          </div>
+
+          <div className="relative">
+            {/* Connection line */}
+            <div className="hidden md:block absolute top-10 left-0 right-0 h-1 bg-gradient-to-r from-primary-200 via-accent-purple/30 to-accent-cyan/30"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {process.map((item, index) => (
+                <div key={index} className="relative text-center group">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl text-3xl font-bold mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 relative z-10">
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-dark-900 mb-3">{item.title}</h3>
+                  <p className="text-dark-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Note - Modern Card */}
+      <section className="section-padding bg-gradient-to-b from-dark-50 to-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-6">
+              A Note from the <span className="text-gradient">Founder</span>
+            </h2>
+          </div>
+
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-purple to-accent-cyan rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+            
+            <div className="relative glass rounded-3xl p-10 md:p-12">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-xl">
+                    SA
+                  </div>
+                </div>
+                
+                <div className="flex-1">
+                  <p className="text-xl text-dark-700 mb-8 leading-relaxed italic">
+                    "I started Saketh AI Automation because I saw too many businesses struggling with manual processes that technology could easily solve. My mission is simple: build tools that work, teach you how they work, and make sure you get real results. Every project we take on is focused on creating measurable value for your business."
+                  </p>
+                  <div className="border-t border-dark-200 pt-6">
+                    <div className="font-bold text-dark-900 text-lg">Saketh</div>
+                    <div className="text-dark-600">Founder & Lead Engineer</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          
         </div>
       </section>
 
 
       <MarqueeVideoCarousel />
 
-      <section className="py-20 bg-gradient-to-br from-[#071130] via-[#0A1A4A] to-[#071130] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Book a free consultation and let's discuss how AI automation can scale your operations.
+      {/* Final CTA - Modern & Engaging */}
+      <section className="relative section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-black text-white overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-gradient-mesh-strong opacity-30 animate-gradient"></div>
+        
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 animate-fade-in">
+            <Sparkles className="w-4 h-4 text-primary-400" />
+            <span className="text-sm font-medium">Let's Build Something Amazing</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Ready to Transform Your{' '}
+            <span className="bg-gradient-to-r from-primary-400 via-accent-cyan to-accent-purple bg-clip-text text-transparent">
+              Business?
+            </span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-dark-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Book a free consultation and let's discuss how AI automation can scale your operations and drive growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
-  onClick={() => window.open('https://wa.me/918187889752', '_blank')}
-  className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
->
-  Book a Free Call
-</button>
-<a
-  href="https://wa.me/918187889752"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold text-lg flex items-center gap-2"
->
-  <MessageCircle className="w-5 h-5" />
-  WhatsApp Us
-</a>
+              onClick={() => window.open('https://wa.me/918187889752', '_blank')}
+              className="group relative px-8 py-4 bg-gradient-to-r from-accent-green to-emerald-500 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-accent-green/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center space-x-2">
+                <Sparkles className="w-5 h-5" />
+                <span>Book a Free Call</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-accent-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+            
+            <a
+              href="https://wa.me/918187889752"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-8 py-4 glass-dark border-2 border-white/30 rounded-xl hover:border-white/50 font-semibold text-lg transition-all duration-300 hover:-translate-y-1 flex items-center space-x-2"
+            >
+              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
 
+          <div className="mt-16 pt-16 border-t border-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-extrabold text-gradient mb-2">&lt; 24hrs</div>
+                <p className="text-dark-300">Average Response Time</p>
+              </div>
+              <div>
+                <div className="text-4xl font-extrabold text-gradient mb-2">100%</div>
+                <p className="text-dark-300">Free Consultations</p>
+              </div>
+              <div>
+                <div className="text-4xl font-extrabold text-gradient mb-2">No Obligation</div>
+                <p className="text-dark-300">Just Honest Advice</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

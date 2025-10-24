@@ -6,13 +6,7 @@ import Curriculum from '../components/training/Curriculum'
 import Vision from '../components/training/Vision'
 import FAQ from '../components/training/FAQ'
 
-
-
-interface TrainingProps {
-  onNavigate: (page: string) => void
-}
-
-export default function Training({ onNavigate }: TrainingProps) {
+export default function Training() {
   return (
     <div>
       <Hero />

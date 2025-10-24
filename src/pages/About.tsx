@@ -1,10 +1,6 @@
-import { Target, Lightbulb, Users, Award } from 'lucide-react'
+import { Target, Lightbulb, Users, Award, Sparkles } from 'lucide-react'
 
-interface AboutProps {
-  onNavigate: (page: string) => void
-}
-
-export default function About({ onNavigate }: AboutProps) {
+export default function About() {
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
@@ -66,22 +62,35 @@ export default function About({ onNavigate }: AboutProps) {
   ]
 
   return (
-    <div className="pt-16">
-      <section className="bg-gradient-to-br from-[#071130] via-[#0A1A4A] to-[#071130] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Saketh AI Automation</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+    <div>
+      {/* Hero Section - Modern */}
+      <section className="relative section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-black text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+        
+        <div className="section-container relative z-10 text-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 animate-fade-in">
+            <Sparkles className="w-4 h-4 text-primary-400" />
+            <span className="text-sm font-medium">Our Story</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+            About <span className="text-gradient">Saketh AI</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-dark-200 max-w-4xl mx-auto leading-relaxed font-light">
             We're on a mission to help businesses leverage AI and automation to work smarter, scale faster, and achieve more
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Story Section - Modern */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-6">Our Story</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-8">
+                Our <span className="text-gradient">Story</span>
+              </h2>
+              <div className="space-y-6 text-lg text-dark-700 leading-relaxed">
                 <p>
                   Saketh AI Automation was born from a simple observation: too many businesses are
                   held back by manual processes and outdated technology. I saw brilliant founders
@@ -105,28 +114,32 @@ export default function About({ onNavigate }: AboutProps) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#071130] to-[#0A1A4A] rounded-xl p-8 text-white">
-              <div className="mb-6">
-                <div className="w-24 h-24 bg-[#0EA5E9] rounded-full flex items-center justify-center text-white font-bold text-3xl mb-4">
-                  SA
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-purple to-accent-cyan rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              
+              <div className="relative bg-gradient-to-br from-dark-900 via-dark-950 to-black rounded-3xl p-10 text-white">
+                <div className="mb-8">
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl mb-6 shadow-xl">
+                    SA
+                  </div>
+                  <h3 className="text-3xl font-bold mb-2">Saketh</h3>
+                  <p className="text-dark-300">Founder & Lead Engineer</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Saketh</h3>
-                <p className="text-gray-300">Founder & Lead Engineer</p>
-              </div>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                "I believe technology should empower people, not confuse them. Every solution we
-                build is designed to be understandable, maintainable, and scalable. My goal is to
-                help you automate the boring stuff so you can focus on what matters: growing your
-                business and serving your customers."
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/20">
-                <div>
-                  <div className="text-3xl font-bold text-[#22C55E]">100+</div>
-                  <div className="text-sm text-gray-300">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#22C55E]">95+</div>
-                  <div className="text-sm text-gray-300">Happy Clients</div>
+                <p className="text-dark-200 text-lg leading-relaxed mb-8 italic">
+                  "I believe technology should empower people, not confuse them. Every solution we
+                  build is designed to be understandable, maintainable, and scalable. My goal is to
+                  help you automate the boring stuff so you can focus on what matters: growing your
+                  business and serving your customers."
+                </p>
+                <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
+                  <div>
+                    <div className="text-4xl font-extrabold bg-gradient-to-r from-accent-green to-primary-400 bg-clip-text text-transparent mb-2">150+</div>
+                    <div className="text-sm text-dark-300">Projects Delivered</div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-extrabold bg-gradient-to-r from-accent-green to-primary-400 bg-clip-text text-transparent mb-2">80+</div>
+                    <div className="text-sm text-dark-300">Happy Clients</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -134,85 +147,109 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600">
+      {/* Values Section - Modern */}
+      <section className="section-padding bg-gradient-to-b from-dark-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20"></div>
+        
+        <div className="section-container relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-900 mb-6">
+              Our <span className="text-gradient">Values</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
               The principles that guide every decision we make
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0EA5E9] text-white rounded-xl mb-4">
+              <div key={index} className="group relative bg-white border-2 border-dark-100 rounded-2xl p-8 card-hover">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#071130] mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                  {value.title}
+                </h3>
+                <p className="text-dark-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Timeline Section - Modern */}
+      <section className="section-padding bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-6">
+              Our <span className="text-gradient">Journey</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
               From solo consultant to trusted automation partner
             </p>
           </div>
 
-          <div className="space-y-8">
-            {timeline.map((item, index) => (
-              <div key={index} className="flex items-start space-x-6">
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-[#0EA5E9] text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    {item.year}
+          <div className="relative">
+            {/* Connection line */}
+            <div className="hidden md:block absolute left-10 top-10 bottom-10 w-0.5 bg-gradient-to-b from-primary-400 via-accent-purple to-accent-cyan"></div>
+            
+            <div className="space-y-12">
+              {timeline.map((item, index) => (
+                <div key={index} className="flex items-start space-x-8 relative">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-xl">
+                      {item.year}
+                    </div>
+                  </div>
+                  <div className="flex-1 glass rounded-2xl p-8 card-hover">
+                    <h3 className="text-2xl font-bold text-dark-900 mb-3">{item.title}</h3>
+                    <p className="text-dark-700 text-lg leading-relaxed">{item.description}</p>
                   </div>
                 </div>
-                <div className="flex-1 bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-[#071130] mb-2">{item.title}</h3>
-                  <p className="text-gray-700">{item.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#071130] mb-4">
-              What Makes Us Different
+      {/* Differentiators Section - Modern */}
+      <section className="section-padding bg-gradient-to-b from-dark-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20"></div>
+        
+        <div className="section-container relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-6">
+              What Makes Us <span className="text-gradient">Different</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-[#0EA5E9] mb-4">100%</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Transparent Process</h3>
-              <p className="text-gray-600">
+            <div className="group relative bg-white border-2 border-dark-100 rounded-2xl p-10 card-hover text-center">
+              <div className="text-6xl font-extrabold text-gradient mb-6">100%</div>
+              <h3 className="text-2xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                Transparent Process
+              </h3>
+              <p className="text-dark-600 leading-relaxed text-lg">
                 You'll always know exactly what we're building, why we're building it, and how it works
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="text-5xl font-bold text-[#0EA5E9] mb-4">240%</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Average ROI</h3>
-              <p className="text-gray-600">
+            <div className="group relative bg-white border-2 border-dark-100 rounded-2xl p-10 card-hover text-center">
+              <div className="text-6xl font-extrabold text-gradient mb-6">240%</div>
+              <h3 className="text-2xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                Average ROI
+              </h3>
+              <p className="text-dark-600 leading-relaxed text-lg">
                 Our clients see an average 240% return on their investment within the first year
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="text-5xl font-bold text-[#0EA5E9] mb-4">0</div>
-              <h3 className="text-xl font-bold text-[#071130] mb-2">Vendor Lock-In</h3>
-              <p className="text-gray-600">
+            <div className="group relative bg-white border-2 border-dark-100 rounded-2xl p-10 card-hover text-center">
+              <div className="text-6xl font-extrabold text-gradient mb-6">0</div>
+              <h3 className="text-2xl font-bold text-dark-900 mb-4 group-hover:text-primary-600 transition-colors">
+                Vendor Lock-In
+              </h3>
+              <p className="text-dark-600 leading-relaxed text-lg">
                 We build systems you own and control. No proprietary platforms or hidden dependencies
               </p>
             </div>
@@ -220,19 +257,28 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#071130] via-[#0A1A4A] to-[#071130] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work Together?</h2>
-          <p className="text-xl text-gray-300 mb-8">
+      {/* Final CTA - Modern */}
+      <section className="relative section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-black text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh-strong opacity-30"></div>
+        
+        <div className="section-container relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+            Ready to Work <span className="text-gradient">Together?</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-dark-200 mb-12 max-w-3xl mx-auto">
             Let's discuss how we can help you automate smarter and scale faster
           </p>
+          
           <button
-  onClick={() => window.open('https://wa.me/918187889752', '_blank')}
-  className="px-8 py-4 bg-[#22C55E] text-white rounded-lg hover:bg-[#16A34A] transition-all font-semibold text-lg"
->
-  Book a Free Call
-</button>
-
+            onClick={() => window.open('https://wa.me/918187889752', '_blank')}
+            className="group relative px-10 py-5 bg-gradient-to-r from-accent-green to-emerald-500 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-accent-green/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden inline-flex items-center space-x-2"
+          >
+            <span className="relative z-10 flex items-center space-x-2">
+              <Sparkles className="w-5 h-5" />
+              <span>Book a Free Call</span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-accent-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
         </div>
       </section>
     </div>

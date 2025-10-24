@@ -11,7 +11,7 @@ export default function FAQ() {
     },
     {
       question: 'Will recordings be available?',
-      answer: 'Yes! All live sessions will be recorded and made available to you for lifetime access. You can revisit any topic, watch at your own pace, and never miss out on any content.'
+      answer: 'Yes! All live sessions will be recorded and made available to you for 1 year access. You can revisit any topic, watch at your own pace, and never miss out on any content.'
     },
     {
       question: 'Can I pay in installments?',

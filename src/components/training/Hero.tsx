@@ -30,66 +30,69 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-purple-600 to-indigo-600">
-      {/* Spacer to offset fixed header */}
-      <div className="h-16 md:h-20 lg:h-24" />
-
-      {/* Hero content filling viewport minus header */}
-      <div className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] lg:min-h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 text-center">
+    <section className="relative bg-gradient-to-br from-dark-900 via-dark-950 to-black overflow-hidden">
+      {/* Gradient Mesh Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+      
+      {/* Hero content */}
+      <div className="relative min-h-screen flex flex-col justify-center items-center px-4 text-center section-padding">
         {/* Telugu Batch badge */}
-        <div className="mb-4">
-          <span className="inline-flex items-center gap-1 bg-white/20 text-white text-xs sm:text-sm font-medium py-1 px-3 rounded-full backdrop-blur-sm">
-            <Sparkles />
+        <div className="mb-8 animate-fade-in">
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium py-2 px-5 rounded-full">
+            <Sparkles className="w-4 h-4" />
             Telugu Batch Starting Soon
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
           n8n AI Automation{' '}
-          <span className="text-yellow-300">Telugu Batch</span>
+          <span className="bg-gradient-to-r from-primary-400 via-accent-cyan to-accent-purple bg-clip-text text-transparent">
+            Telugu Batch
+          </span>
         </h1>
 
         {/* Description */}
-        <p className="mt-4 text-sm sm:text-base md:text-lg text-white/90 max-w-xl">
+        <p className="text-lg sm:text-xl md:text-2xl text-dark-200 max-w-3xl mb-12 leading-relaxed animate-fade-in-up font-light">
           Learn 15+ Real-Time AI Automation Projects
           <br />
           No Coding Required. 100% Beginner Friendly.
         </p>
 
         {/* Action buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up">
           <a
-  href="https://wa.me/918187889752"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
->
-  Join Now
-</a>
+            href="https://wa.me/918187889752"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-8 py-4 bg-gradient-to-r from-accent-green to-emerald-500 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-accent-green/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden inline-flex items-center space-x-2"
+          >
+            <span className="relative z-10">Join Now</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-accent-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
 
           <button
             onClick={handleDownloadPDF}
-            className="inline-flex items-center justify-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/20 transition"
+            className="group px-8 py-4 glass-dark border-2 border-white/30 rounded-xl hover:border-white/50 text-white font-semibold text-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center space-x-2"
           >
-            <Download />
-            Download Syllabus PDF
+            <Download className="w-5 h-5" />
+            <span>Download Syllabus PDF</span>
           </button>
         </div>
 
         {/* Stats Section */}
-        <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6 max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl animate-fade-in">
           {[
             { value: '15+', label: 'Projects' },
             { value: '1', label: 'Month' },
             { value: '100%', label: 'Practical' },
-            { value: '∞', label: 'Lifetime Access' },
+            { value: '1 Year', label: 'Access' },
           ].map((item, idx) => (
-            <div key={idx} className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+            <div key={idx} className="group text-center">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gradient mb-3 group-hover:scale-110 transition-transform">
                 {item.value}
               </div>
-              <div className="text-sm sm:text-base text-white/90">{item.label}</div>
+              <div className="text-base sm:text-lg text-dark-200 font-medium">{item.label}</div>
             </div>
           ))}
         </div>
