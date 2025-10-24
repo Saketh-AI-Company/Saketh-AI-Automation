@@ -1,4 +1,5 @@
 import React from 'react'
+import { Sparkles } from 'lucide-react'
 
 interface CompanyLogo {
   name: string
@@ -61,57 +62,76 @@ const TrustedCompaniesCarousel: React.FC = () => {
   const duplicatedLogos = [...companyLogos, ...companyLogos]
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Seamless Integrations
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-50 border border-primary-100 rounded-full mb-6">
+            <Sparkles className="w-4 h-4 text-primary-600" />
+            <span className="text-sm font-medium text-primary-700">Seamless Integrations</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-6">
+            Connect with <span className="text-gradient">Your Tools</span>
           </h2>
-          <p className="text-gray-600">
-            Connect with the tools and platforms you already use
+          <p className="text-xl text-dark-600 max-w-3xl mx-auto">
+            Integrate with 50+ platforms and services you already use
           </p>
         </div>
         
-        <div className="relative overflow-hidden">
-          <div className="flex animate-marquee hover:pause-marquee">
-            {duplicatedLogos.map((company, index) => (
-              <div
-                key={`${company.name}-${index}`}
-                className="flex-shrink-0 mx-6 flex items-center justify-center"
-              >
-                <img
-                  src={company.logoUrl}
-                  alt={`${company.name} logo`}
-                  className="h-12 w-auto max-w-[120px] object-contain transition-transform duration-300 hover:scale-110"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    const parent = target.parentElement
-                    if (parent) {
-                      parent.innerHTML = `<div class="text-gray-700 font-medium text-sm px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">${company.name}</div>`
-                    }
-                  }}
-                />
-              </div>
-            ))}
+        <div className="relative">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark-50 via-dark-50 to-transparent z-10"></div>
+          
+          <div className="relative overflow-hidden py-8">
+            <div className="flex animate-marquee hover:pause-marquee">
+              {duplicatedLogos.map((company, index) => (
+                <div
+                  key={`${company.name}-${index}`}
+                  className="flex-shrink-0 mx-4"
+                >
+                  <div className="group relative w-32 h-32 bg-white border-2 border-dark-100 rounded-2xl p-6 flex items-center justify-center transition-all duration-300 hover:border-primary-300 hover:shadow-xl hover:-translate-y-1">
+                    <img
+                      src={company.logoUrl}
+                      alt={`${company.name} logo`}
+                      className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                        const parent = target.parentElement
+                        if (parent) {
+                          parent.innerHTML = `<div class="text-dark-700 font-semibold text-xs text-center">${company.name}</div>`
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-dark-500 text-sm">And many more platforms with custom integrations</p>
+        </div>
       </div>
+
       
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%) }
-          100% { transform: translateX(-50%) }
-        }
-        
-        .animate-marquee {
-          animation: marquee 18s linear infinite;
-        }
-        
-        .pause-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(0%) }
+            100% { transform: translateX(-50%) }
+          }
+          
+          .animate-marquee {
+            animation: marquee 18s linear infinite;
+          }
+          
+          .pause-marquee:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
     </section>
   )
 }

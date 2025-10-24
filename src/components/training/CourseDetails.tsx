@@ -20,42 +20,42 @@ export default function CourseDetails() {
       value: 'Monday to Friday | 1 Hour Daily',
       color: 'text-green-600'
     },
-    {
-      icon: Video,
-      label: 'Access',
-      value: 'Recorded Sessions for Lifetime',
-      color: 'text-orange-600'
-    }
+        {
+          icon: Video,
+          label: 'Access',
+          value: 'Recorded Sessions for 1 Year',
+          color: 'text-orange-600'
+        }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-gradient-to-b from-white to-dark-50">
+      <div className="section-container">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Course <span className="gradient-text">Details</span>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-dark-900 mb-6">
+              Course <span className="text-gradient">Details</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto font-light">
               Everything you need to know about our training program
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {details.map((detail, index) => (
               <div
                 key={index}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 hover:-translate-y-1"
+                className="group relative bg-white border-2 border-dark-100 p-8 rounded-2xl card-hover"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br from-purple-50 to-blue-50 group-hover:from-purple-100 group-hover:to-blue-100 transition-all duration-300`}>
+                <div className="flex items-start gap-6">
+                  <div className={`p-4 rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 group-hover:scale-110 transition-transform duration-300`}>
                     <detail.icon className={`w-8 h-8 ${detail.color}`} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                    <h3 className="text-lg font-bold text-dark-600 mb-3">
                       {detail.label}
                     </h3>
-                    <p className="text-xl font-bold text-gray-900">
+                    <p className="text-xl font-bold text-dark-900">
                       {detail.value}
                     </p>
                   </div>

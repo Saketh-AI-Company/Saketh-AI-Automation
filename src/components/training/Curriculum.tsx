@@ -104,7 +104,7 @@ export default function Curriculum() {
           {modules.map((module, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200">
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200"
               >
                 <h3 className="text-xl font-semibold text-gray-900">
