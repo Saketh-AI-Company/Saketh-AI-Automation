@@ -35,7 +35,7 @@ export default function FAQ() {
     },
     {
       question: 'Can I get refund if I am not satisfied?',
-      answer: 'Yes, we offer a 7-day money-back guarantee. If you attend the first week of classes and feel this course is not for you, we will provide a full refund, no questions asked.'
+      answer: 'No, we do not provide any refunds once the course has started. We encourage you to review the course details, syllabus, and connect with us for any questions before enrolling to ensure this course is the right fit for you.'
     }
   ];
 
