@@ -29,7 +29,7 @@ export default function Services() {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'Website Development',
+      title: 'Web Applications Development',
       description: 'Fast, responsive, and conversion-optimized websites that drive results',
       features: [
         'Custom design tailored to your brand',
